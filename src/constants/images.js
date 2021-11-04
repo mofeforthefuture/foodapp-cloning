@@ -5,6 +5,7 @@ export const Fruits = require('../assets/images/Fruits.png');
 export const John = require('../assets/images/John.png');
 export const Pancake = require('../assets/images/Pancake.png');
 export const Pancake3 = require('../assets/images/Pancake3.png');
+export const Pancake2 = require('../assets/images/Pancake2.png');
 export const Salad = require('../assets/images/Salad.png');
 
 export default {
@@ -16,4 +17,5 @@ export default {
   Pancake,
   Pancake3,
   Salad,
+  Pancake2,
 };

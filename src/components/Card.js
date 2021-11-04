@@ -7,10 +7,12 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
-import {COLORS, FONTS, SIZES} from '../constants';
+import {COLORS, SIZES} from '../constants';
 import {Love, Ellipse} from '../constants/icons';
+import {useTranslation} from '../context/LanguageContext';
 
-export default function Card({avatar, image, onPress}) {
+export default function Card({avatar, image, onPress, name, product}) {
+  const {food, mins} = useTranslation();
   return (
     <TouchableOpacity onPress={onPress} style={{...styles.container}}>
       <View
@@ -30,7 +32,7 @@ export default function Card({avatar, image, onPress}) {
             fontWeight: '500',
             color: COLORS.mainTxt,
           }}>
-          Calum Lewis
+          {name}
         </Text>
       </View>
 
@@ -42,6 +44,7 @@ export default function Card({avatar, image, onPress}) {
           height: '80%',
           alignItems: 'flex-end',
           marginBottom: '-40%',
+          borderRadius: 20,
         }}>
         <TouchableOpacity
           style={{
@@ -65,7 +68,7 @@ export default function Card({avatar, image, onPress}) {
             color: COLORS.primaryTxt,
             marginBottom: SIZES.margin / 4,
           }}>
-          Pancake
+          {product}
         </Text>
         <View
           style={{
@@ -74,9 +77,11 @@ export default function Card({avatar, image, onPress}) {
             justifyContent: 'space-between',
             paddingRight: SIZES.padding,
           }}>
-          <Text style={styles.text}>Food</Text>
+          <Text style={styles.text}>{food}</Text>
           <Image source={Ellipse} />
-          <Text style={styles.text}>{'>'}60 mins</Text>
+          <Text style={styles.text}>
+            {'>'}60 {mins}
+          </Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -87,7 +92,8 @@ const styles = StyleSheet.create({
     width: '45%',
     height: 320,
     alignItems: 'center',
-    marginVertical: SIZES.margin,
+    marginTop: SIZES.margin,
+    marginHorizontal: 10,
   },
   avatar: {
     width: 40,

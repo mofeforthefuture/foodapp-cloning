@@ -1,11 +1,20 @@
 import React from 'react';
-import {View, Text, Image, TextInput, SafeAreaView} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TextInput,
+  SafeAreaView,
+  ScrollView,
+} from 'react-native';
 import {COLORS, SIZES} from '../constants/theme';
 import {SearchIcon} from '../constants/icons';
 import {Pills} from '../components';
 import TabBar from '../components/TabBar';
+import {useTranslation} from '../context/LanguageContext';
 
 export default function MealDisplay() {
+  const {category, search, all, drinks, food} = useTranslation();
   return (
     <View style={{flex: 1}}>
       <SafeAreaView style={{backgroundColor: COLORS.white}}></SafeAreaView>
@@ -13,9 +22,9 @@ export default function MealDisplay() {
       <View
         style={{
           backgroundColor: '#fff',
-          height: SIZES.height / 3.8,
+          height: SIZES.height / 3.2,
           alignItems: 'center',
-          marginBottom: SIZES.padding / 2,
+          marginBottom: SIZES.padding / 2.5,
         }}>
         <View
           style={{
@@ -30,33 +39,40 @@ export default function MealDisplay() {
           }}>
           <Image source={SearchIcon} />
           <TextInput
-            placeholder="Search"
-            style={{height: 56, paddingLeft: 15}}
+            placeholder={search}
+            style={{height: 56, width: 300, paddingLeft: 15}}
           />
         </View>
-        <View style={{width: 327}}>
-          <Text
-            style={{
-              fontWeight: '700',
-              fontSize: 27,
-              marginTop: 24,
-              marginBottom: 16,
-              color: COLORS.primaryTxt,
-            }}>
-            Category{' '}
-          </Text>
+        <View style={{width: SIZES.width, alignItems: 'center'}}>
+          <View style={{width: 327}}>
+            <Text
+              style={{
+                fontWeight: '700',
+                fontSize: 27,
+                marginTop: 24,
+                marginBottom: 16,
+                color: COLORS.primaryTxt,
+              }}>
+              {category}{' '}
+            </Text>
+          </View>
           <View style={{flexDirection: 'row'}}>
-            <Pills text={'All'} color={COLORS.green} textColor={COLORS.white} />
-            <Pills
-              text={'Food'}
-              color={COLORS.background}
-              textColor={COLORS.gray}
-            />
-            <Pills
-              text={'Drink'}
-              color={COLORS.background}
-              textColor={COLORS.gray}
-            />
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+              style={{paddingLeft: 20}}>
+              <Pills text={all} color={COLORS.green} textColor={COLORS.white} />
+              <Pills
+                text={food}
+                color={COLORS.background}
+                textColor={COLORS.gray}
+              />
+              <Pills
+                text={drinks}
+                color={COLORS.background}
+                textColor={COLORS.gray}
+              />
+            </ScrollView>
           </View>
         </View>
       </View>

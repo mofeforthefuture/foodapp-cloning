@@ -6,12 +6,12 @@ export default function Pills({text, color, textColor}) {
   return (
     <View
       style={{
-        padding: 15,
-        width: 86,
+        padding: 12,
         backgroundColor: color,
         borderRadius: 30,
         alignItems: 'center',
         marginHorizontal: 10,
+        minWidth: 80,
       }}>
       <Text style={{fontWeight: '500', color: textColor, fontSize: SIZES.h2}}>
         {text}
