@@ -64,7 +64,7 @@ export default function Card({avatar, image, onPress, name, product}) {
         <Text
           style={{
             fontWeight: '700',
-            fontSize: 27,
+            fontSize: 20,
             color: COLORS.primaryTxt,
             marginBottom: SIZES.margin / 4,
           }}>

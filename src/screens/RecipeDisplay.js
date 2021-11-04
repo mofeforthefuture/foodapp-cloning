@@ -66,7 +66,7 @@ export default function RecipeDisplay({navigation}) {
           <Image source={Indicator} />
           <View style={{width: '100%'}}>
             <View style={{width: 150}}>
-              <Text style={{...styles.primaryTxt, fontSize: 24}}>
+              <Text style={{...styles.primaryTxt, fontSize: 20}}>
                 {pancake}
               </Text>
               <View
@@ -116,7 +116,7 @@ export default function RecipeDisplay({navigation}) {
             }}></View>
 
           <View style={{width: '100%'}}>
-            <Text style={{...styles.primaryTxt, fontSize: 24}}>
+            <Text style={{...styles.primaryTxt, fontSize: 20}}>
               {description}
             </Text>
 
@@ -131,7 +131,7 @@ export default function RecipeDisplay({navigation}) {
                 marginVertical: 20,
               }}></View>
             <View style={{marginBottom: SIZES.margin}}>
-              <Text style={{...styles.primaryTxt, fontSize: 24}}>
+              <Text style={{...styles.primaryTxt, fontSize: 20}}>
                 {ingredients}
               </Text>
               <View>
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
   },
   primaryTxt: {
     fontWeight: '700',
-    fontSize: 20,
+    fontSize: 16,
     color: COLORS.primaryTxt,
     marginBottom: SIZES.margin / 4,
   },

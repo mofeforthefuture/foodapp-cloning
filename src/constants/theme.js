@@ -9,6 +9,7 @@ export const COLORS = {
   primaryTxt: '#3E5481',
   mainTxt: '#2E3E5C',
   secondaryTxt: '#9FA5C0',
+  placeholder: '#9FA5C0',
 };
 export const SIZES = {
   // global sizes

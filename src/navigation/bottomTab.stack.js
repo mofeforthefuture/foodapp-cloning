@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useTranslation} from '../context/LanguageContext';
 import {COLORS, SIZES} from '../constants/theme';
-import {Image} from 'react-native';
+import {Image, View} from 'react-native';
 import {
   HomeIcon,
   EditIcon,
@@ -97,7 +97,7 @@ const BottomTab = props => {
           options={{
             tabBarLabel: `${scan}`,
             tabBarIcon: ({color, size}) => (
-              <TouchableOpacity
+              <View
                 style={{
                   backgroundColor: COLORS.green,
                   height: 56,
@@ -115,7 +115,7 @@ const BottomTab = props => {
                   }}
                   source={ScanIcon}
                 />
-              </TouchableOpacity>
+              </View>
             ),
           }}
         />

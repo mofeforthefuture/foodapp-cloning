@@ -4,6 +4,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 import {useDispatch} from 'react-redux';
 import {changeLanguage} from '../reducers/lang.reducer';
 import {useSelector} from 'react-redux';
+import {COLORS, SIZES} from '../constants';
 
 export default function Notification() {
   const language = useSelector(state => state.lang.value.lang);
@@ -19,7 +20,7 @@ export default function Notification() {
   ]);
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Select Language</Text>
+      <Text style={{color: COLORS.mainTxt}}>Select Language</Text>
       <DropDownPicker
         open={open}
         value={value}

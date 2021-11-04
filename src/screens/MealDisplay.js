@@ -40,6 +40,7 @@ export default function MealDisplay() {
           <Image source={SearchIcon} />
           <TextInput
             placeholder={search}
+            placeholderTextColor={COLORS.placeholder}
             style={{height: 56, width: 300, paddingLeft: 15}}
           />
         </View>
@@ -60,7 +61,7 @@ export default function MealDisplay() {
             <ScrollView
               horizontal={true}
               showsHorizontalScrollIndicator={false}
-              style={{paddingLeft: 20}}>
+              style={{paddingLeft: 10}}>
               <Pills text={all} color={COLORS.green} textColor={COLORS.white} />
               <Pills
                 text={food}
