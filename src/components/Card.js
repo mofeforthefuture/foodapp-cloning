@@ -39,24 +39,8 @@ export default function Card({avatar, image, onPress, name, product}) {
       <ImageBackground
         source={image}
         resizeMode="contain"
-        style={{
-          width: '100%',
-          height: '80%',
-          alignItems: 'flex-end',
-          marginBottom: '-40%',
-          borderRadius: 20,
-        }}>
-        <TouchableOpacity
-          style={{
-            width: 40,
-            height: 40,
-            borderRadius: 5,
-            margin: 20,
-            backgroundColor: 'rgba(255, 255, 255, 0.2)',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginTop: 40,
-          }}>
+        style={styles.background}>
+        <TouchableOpacity style={styles.like}>
           <Image source={Love} resizeMode="contain" style={{width: 25}} />
         </TouchableOpacity>
       </ImageBackground>
@@ -107,5 +91,22 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 14,
     color: COLORS.gray,
+  },
+  background: {
+    width: '100%',
+    height: '80%',
+    alignItems: 'flex-end',
+    marginBottom: '-40%',
+    borderRadius: 20,
+  },
+  like: {
+    width: 40,
+    height: 40,
+    borderRadius: 5,
+    margin: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 40,
   },
 });

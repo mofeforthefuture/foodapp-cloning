@@ -3,7 +3,6 @@ import {View, FlatList} from 'react-native';
 import {Card} from '../components';
 import {COLORS, SIZES} from '../constants';
 import {DATA} from '../constants/dummyData';
-import {Calum, Pancake} from '../constants/images';
 
 export default function Profile({navigation}) {
   return (

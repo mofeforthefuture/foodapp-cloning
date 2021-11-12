@@ -49,16 +49,7 @@ export default function RecipeDisplay({navigation}) {
           }}>
           <TouchableOpacity
             onPress={() => navigation.goBack()}
-            style={{
-              width: 60,
-              height: 60,
-              borderRadius: 30,
-              backgroundColor: 'rgba(255, 255, 255, 0.2)',
-              marginTop: 40,
-              marginLeft: 20,
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
+            style={styles.arrowback}>
             <Image source={ArrowBack} />
           </TouchableOpacity>
         </ImageBackground>
@@ -69,13 +60,7 @@ export default function RecipeDisplay({navigation}) {
               <Text style={{...styles.primaryTxt, fontSize: 20}}>
                 {pancake}
               </Text>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  paddingRight: SIZES.padding,
-                }}>
+              <View style={styles.infoContainer}>
                 <Text style={{...styles.text}}>{food}</Text>
                 <Image source={Ellipse} style={{marginHorizontal: 2}} />
                 <Text style={styles.text}>60 {mins}</Text>
@@ -185,5 +170,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 10,
+  },
+  arrowback: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    marginTop: 40,
+    marginLeft: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  infoContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingRight: SIZES.padding,
   },
 });
